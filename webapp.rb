@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-  @messages = Message.sort(:create_at).limit(10)
+  @messages = Message.sort(:create_at.desc).limit(10)
   @messages = [] if @messages == nil
   erb :index
 end
