@@ -1,0 +1,6 @@
+<% @messages.each do |message| %>
+	<div class="message">
+		<p class="text"><%= message.body %></p>
+		<p class="author"><%= message.author %> on <%= message.created_at.to_s %></p>
+	</div>
+<% end %>

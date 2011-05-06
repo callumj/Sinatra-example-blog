@@ -1,3 +1,3 @@
-require 'webapp'
+require 'bootstrap'
 
 run Sinatra::Application
