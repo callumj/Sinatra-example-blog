@@ -5,6 +5,51 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>My messagebook</title>
 	<style type="text/css" media="screen">
+		a:link, a:visited, a:hover {
+			color: black;
+			text-decoration: none;
+		}
+		
+		a:hover {
+			border-bottom: 1px solid gray;
+		}
+		
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		
+		#header {
+			background-color: #007DEB;
+			color: white;
+			margin: 0;
+			padding: 0;
+			padding-bottom: 10px;
+		}
+		
+		#header h1 {
+			margin: 0;
+			padding: 0;
+			font-size: 35pt;
+		}
+		
+		#header p {
+			padding: 0;
+			margin: 0;
+			margin-left: 10px;
+		}
+		
+		#content {
+			margin: 5px;
+		}
+		
+		.message {
+			margin-top: 10px;
+			margin-left: 30px;
+			padding: 10px;
+			background-color: #E5F3FF;
+		}
+		
 		p.text {
 			margin: 0;
 			padding: 0;
@@ -20,6 +65,7 @@
 <body>
 	<div id="header">
 		<h1>The messagebook</h1>
+		<p><a href="/">home</a> <a href="/create">add</a></p>
 	</div>
 	<div id="content">
 		<%= yield %>

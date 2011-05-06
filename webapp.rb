@@ -22,4 +22,6 @@ post '/submit' do
   })
   
   new_message.save
+  
+  redirect to('/')
 end
