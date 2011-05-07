@@ -68,8 +68,8 @@ end
 
 post '/admin/submit' do
   ref = params[:ref].strip
-  title = params[:title]
-  content = params[:content]
+  title = params[:title].strip_tags
+  content = params[:content].strip_tags
   
   target_post = nil
   
@@ -78,9 +78,7 @@ post '/admin/submit' do
   else
     target_post = Post.where(:ref => ref).first
   end
-  
-  content = content.gsub(/<script.*?>[\s\S]*<\/script>/i, "")
-  
+    
   target_post.title = title
   target_post.markup = content
   
@@ -107,8 +105,8 @@ end
 
 post '/admin/submit_user' do
   prev_user_name = params[:prev_user_name].strip
-  user_name = params[:user_name]
-  display_name = params[:display_name]
+  user_name = params[:user_name].strip_tags
+  display_name = params[:display_name].strip_tags
   password = params[:password].strip
   
   target_user = nil

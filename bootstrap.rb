@@ -21,4 +21,12 @@ if (User.all.count == 0)
   new_user.save
 end
 
+#overload
+
+class String
+	def strip_tags
+		self.gsub( %r{</?[^>]+?>}, '' )
+	end
+end
+
 require 'webapp'
