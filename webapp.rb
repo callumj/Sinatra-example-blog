@@ -79,6 +79,8 @@ post '/admin/submit' do
     target_post = Post.where(:ref => ref).first
   end
   
+  content = content.gsub(/<script.*?>[\s\S]*<\/script>/i, "")
+  
   target_post.title = title
   target_post.markup = content
   
