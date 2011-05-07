@@ -15,13 +15,16 @@
 		}
 		
 		body {
-			padding: 0;
+			padding: 0px;
 			margin: 0;
 			font-family: Helvetica;
+			width: 50%;
+			margin-left: 25%;
+			background-color: #9eb0c0;
 		}
 		
 		#header {
-			background-color: #007DEB;
+			background-color: #002c52; /* screw websafe */
 			color: white;
 			margin: 0;
 			padding: 0;
@@ -44,29 +47,45 @@
 			margin: 5px;
 		}
 		
-		.message {
-			margin-top: 10px;
-			margin-left: 30px;
-			padding: 10px;
-			background-color: #E5F3FF;
+		.post {
+			background-color: white;
+			margin-bottom: 20px;
+			border-bottom: 1px solid gray;
 		}
 		
-		p.text {
+		.post h2 {
 			margin: 0;
+			margin-bottom: 2px;
 			padding: 0;
-			font-size: 15pt;
 		}
-		p.author {
+		
+		.post p {
 			margin: 0;
 			padding: 0;
-			font-size: 8pt;
+		}
+		
+		.post .author {
+			font-size: 7pt;
+			text-align: right;
+		}
+		
+		#admin {
+			background-color: white;
+		}
+		
+		#admin p {
+			margin-left: 5px;
+		}
+		
+		#admin textarea {
+			width: 80%;
+			height: 300px;
 		}
 	</style>
 </head>
 <body>
 	<div id="header">
 		<h1>The messagebook</h1>
-		<p><a href="/">home</a> <a href="/create">add</a></p>
 	</div>
 	<div id="content">
 		<%= yield %>

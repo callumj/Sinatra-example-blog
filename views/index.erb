@@ -1,6 +1,7 @@
-<% @messages.each do |message| %>
-	<div class="message">
-		<p class="text"><%= message.body %></p>
-		<p class="author"><%= message.author %> on <%= message.created_at.to_s %></p>
+<% @posts.each do |post| %>
+	<div class="post">
+		<h2><%= post.title %></h2>
+		<p class="text"><%= post.html %></p>
+		<p class="author"><%= post.user.display_name %> on <%= post.created_at.to_s %></p>
 	</div>
 <% end %>

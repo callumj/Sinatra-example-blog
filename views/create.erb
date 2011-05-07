@@ -1,6 +1,8 @@
-<form action="/submit" method="post" accept-charset="utf-8">
-	<p>Name: <input type="text" value="Name" name="name"></p>
-	<p>Message</p>
-	<p><textarea name="message"></textarea></p>
-	<p><input type="submit" value="Submit &rarr;"></p>
-</form>
+<div id="admin">
+	<form action="/admin/submit" method="post" accept-charset="utf-8">
+		<input type="hidden" name="ref" value="<%= @post.ref %>" />
+		<p>Title: <input type="text" name="title" value="<%= @post.title %>" /></p>
+		<p><textarea name="content"><%= @post.markup %></textarea></p>
+		<p><input type="submit" value="Submit &rarr;"></p>
+	</form>
+</div>

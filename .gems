@@ -1,2 +1,3 @@
 sinatra
 mongo_mapper
+rdiscount

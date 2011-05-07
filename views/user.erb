@@ -1,0 +1,10 @@
+<div id="admin">
+	<form action="/admin/submit_user" method="post" accept-charset="utf-8">
+		<input type="hidden" name="prev_user_name" value="<%= @user.user_name %>" />
+		<p>Display name: <input type="text" name="display_name" value="<%= @user.display_name %>" /></p>
+		<p>Username: <input type="text" name="user_name" value="<%= @user.user_name %>" /></p>
+		<p>Password: <input type="password" name="password" value="" /></p>
+		<p><input type="submit" value="Submit &rarr;"></p>
+		<p><a href="/admin/delete_user/<%= @user.user_name %>">Delete user</a></p>
+	</form>
+</div>

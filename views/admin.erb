@@ -1,0 +1,22 @@
+<div id="admin">
+	<p><a href="/admin/create">Create new post</a></p>
+	<div class="list">
+		<h3>All Posts</h3>
+		<ul>
+			<% @all_posts.each do |post| %>
+				<li><a href="/admin/edit/<%= post.ref %>"><%= post.title %></a></li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<p><a href="/admin/add_user">Add new user</a></p>
+	
+	<div class="list">
+		<h3>All Users</h3>
+		<ul>
+			<% @all_users.each do |user| %>
+				<li><a href="/admin/edit_user/<%= user.user_name %>"><%= user.display_name %></a></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
