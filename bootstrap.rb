@@ -29,4 +29,4 @@ class String
 	end
 end
 
-require 'webapp'
+require "#{File.dirname(__FILE__)}/webapp.rb"
