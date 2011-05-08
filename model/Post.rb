@@ -1,4 +1,5 @@
 require 'rdiscount'
+require 'sanitize'
 
 class Post
   include MongoMapper::Document
@@ -16,6 +17,8 @@ class Post
   def fillin_blanks
     markup_obj = RDiscount.new(@markup)
     @html = markup_obj.to_html
+    
+    @html = Sanitize.clean(@html, Sanitize::Config::RELAXED)
     
     @created_at = Time.new if @created_at == nil
     

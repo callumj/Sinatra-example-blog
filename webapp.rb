@@ -69,7 +69,7 @@ end
 post '/admin/submit' do
   ref = params[:ref].strip
   title = params[:title].strip_tags
-  content = params[:content].strip_tags
+  content = params[:content]
   
   target_post = nil
   
