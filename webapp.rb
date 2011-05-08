@@ -11,7 +11,7 @@ helpers do
   def authorized?
     @session = Session.where(:sec1 => session[:sec1], :sec2 => session[:sec2]).first
     
-    if !(@session != nil && @session.valid?)
+    if !(@session != nil && @session.session_valid?)
       @auth ||=  Rack::Auth::Basic::Request.new(request.env)
       if (@auth.provided? && @auth.basic? && @auth.credentials)
         username = @auth.credentials[0]
@@ -30,7 +30,7 @@ helpers do
       end  
     end
     
-    return (@session != nil && @session.valid?)
+    return (@session != nil && @session.session_valid?)
   end 
 end
 

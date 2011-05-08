@@ -18,7 +18,7 @@ class Session
     true
   end
   
-  def valid?
+  def session_valid?
     (Time.now.to_i - @created_at.to_i) < 3600
   end
 end
