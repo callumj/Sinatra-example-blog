@@ -1,0 +1,9 @@
+h1. A simple blog powered by Sinatra
+
+I've been meaning to mess around with Heroku for a while but never got the kick to try it, I want to try something that I would normally do on a standard VPS and see how well I could take it into the cloud.
+
+Clearly I've been able to take every aspect of what I consider to be important to me for a website (Sinatra + MongoDB) into the cloud and this is the blog that proves it.
+
+Using Sinatra as the framework and MongoDB (thanks to MongoMapper) as the backend I have created a simple blog where entries are written in Markdown (using the rdiscount gem), converted and sanitised (with Santize) to safe HTML and stored in the MongoDB collection. I've even managed to create a User class for allowing basic auth.
+
+Feel free to do whatever you want with the code.
