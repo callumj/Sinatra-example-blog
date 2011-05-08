@@ -6,4 +6,6 @@ Clearly I've been able to take every aspect of what I consider to be important t
 
 Using Sinatra as the framework and MongoDB (thanks to MongoMapper) as the backend I have created a simple blog where entries are written in Markdown (using the rdiscount gem), converted and sanitised (with Santize) to safe HTML and stored in the MongoDB collection. I've even managed to create a User class for allowing basic auth.
 
+This is actually running right now on Heroku at "heroku1.callumj.com":http://heroku1.callumj.com.
+
 Feel free to do whatever you want with the code.
