@@ -1,6 +1,7 @@
 require 'mongo_mapper'
 require 'sinatra'
 require 'digest/sha1'
+require 'rss/maker'
 
 #config mongo connectivity
 if ENV['MONGOHQ_URL']

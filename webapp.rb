@@ -40,10 +40,32 @@ end
 
 
 get '/' do
+  redirect to("/index.html")
+end
+
+get '/index.:format' do
   response['Cache-Control'] = 'public, max-age=300' #allow Heroku's Varnish cache to be invoked for 5 minutes
   @posts = Post.sort(:created_at.desc).limit(10)
   @posts = [] if @posts == nil
-  erb :index
+  if (params[:format].eql?("html"))
+    erb :index
+  elsif (params[:format].eql?("xml") || params[:format].eql?("rss"))
+    content = RSS::Maker.make("2.0") do |m|
+      m.channel.title = "My messagebook"
+      m.channel.link = "http://heroku1.callumj.com"
+      m.channel.description = "The latest from my blog"
+      m.items.do_sort = true 
+      
+      @posts.each do |post|
+        new_post = m.items.new_item
+        new_post.title = post.title
+        new_post.description = post.html
+        new_post.link = "#{m.channel.link}/##{post.ref}"
+        new_post.date = post.created_at
+      end
+    end
+    content.to_s
+  end
 end
 
 get '/admin' do
