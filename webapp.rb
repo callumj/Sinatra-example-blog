@@ -44,7 +44,11 @@ get '/' do
 end
 
 get '/index.:format' do
-  response['Cache-Control'] = 'public, max-age=300' if (params["no-cache"] != nil && params["no-cache"].eql?("yes")) #allow Heroku's Varnish cache to be invoked for 5 minutes
+  if (params["no-cache"] != nil && params["no-cache"].eql?("yes"))
+    response["Cache-Control"] = "no-cache"
+  else
+    response["Cache-Control"] = "public, max-age=300" #allow Heroku's Varnish cache to be invoked for 5 minutes
+  end
   @posts = Post.sort(:created_at.desc).limit(10)
   @posts = [] if @posts == nil
   if (params[:format].eql?("html"))
