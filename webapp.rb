@@ -40,6 +40,7 @@ end
 
 
 get '/' do
+  response['Cache-Control'] = 'public, max-age=300' #allow Heroku's Varnish cache to be invoked for 5 minutes
   @posts = Post.sort(:created_at.desc).limit(10)
   @posts = [] if @posts == nil
   erb :index
