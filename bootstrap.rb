@@ -1,5 +1,6 @@
 require 'bundler'
 require 'rss/maker'
+require 'digest/sha1'
 Bundler.require(:default)
 
 #config mongo connectivity
