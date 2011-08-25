@@ -1,4 +1,5 @@
 require 'bundler'
+require 'rss/maker'
 Bundler.require(:default)
 
 #config mongo connectivity
