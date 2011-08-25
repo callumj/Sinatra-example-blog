@@ -1,7 +1,5 @@
-require 'mongo_mapper'
-require 'sinatra'
-require 'digest/sha1'
-require 'rss/maker'
+require 'bundler'
+Bundler.require(:default)
 
 #config mongo connectivity
 if ENV['MONGOHQ_URL']
